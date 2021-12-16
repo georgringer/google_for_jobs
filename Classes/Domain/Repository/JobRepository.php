@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Pegasus\GoogleForJobs\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\Repository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 
@@ -20,7 +21,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 /**
  * The repository for Jobs
  */
-class JobRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class JobRepository extends Repository
 {
     /**
      * Returns a list of jobs by categories and their conjunction

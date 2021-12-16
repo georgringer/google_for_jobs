@@ -11,16 +11,16 @@
     ],
     "version": "2.1.1",
     "require": {
-        "typo3/cms-core": "^10.4"
+        "typo3/cms-core": "^10.4 || ^11"
     },
     "autoload": {
         "psr-4": {
             "Pegasus\\GoogleForJobs\\": "Classes"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Pegasus\\GoogleForJobs\\Tests\\": "Tests"
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "google_for_jobs"
         }
     },
     "replace": {

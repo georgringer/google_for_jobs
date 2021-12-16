@@ -193,9 +193,9 @@ class Job extends AbstractEntity
      */
     protected function initStorageObjects(): void
     {
-        $this->falMedia = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->falRelatedFiles = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->jobLocations = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->falMedia = new ObjectStorage();
+        $this->falRelatedFiles = new ObjectStorage();
+        $this->jobLocations = new ObjectStorage();
     }
 
     /**

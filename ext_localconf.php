@@ -6,20 +6,16 @@ call_user_func(
     {
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'Pegasus.GoogleForJobs',
+            'GoogleForJobs',
             'Job',
             [
-                'Job' => 'index, list, show, listSelected, noJobFound'
+                \Pegasus\GoogleForJobs\Controller\JobController::class => 'list, show, listSelected'
             ],
-            // non-cacheable actions
-            [
-                'Job' => ''
-            ]
         );
 
-    // wizards
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        'mod {
+        // wizards
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            'mod {
             wizards.newContentElement.wizardItems.plugins {
                 elements {
                     job {
@@ -35,15 +31,15 @@ call_user_func(
                 show = *
             }
        }'
-    );
-    
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-    $iconRegistry->registerIcon(
-        'google_for_jobs-plugin-job',
-        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        ['source' => 'EXT:google_for_jobs/Resources/Public/Icons/user_plugin_job.svg']
-    );
-		
+        );
+
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+        $iconRegistry->registerIcon(
+            'google_for_jobs-plugin-job',
+            \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+            ['source' => 'EXT:google_for_jobs/Resources/Public/Icons/user_plugin_job.svg']
+        );
+
     }
 );
 // register location migration update wizard
